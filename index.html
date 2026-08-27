@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0e0d0c">
-  <meta name="description" content="张雯轩，三年 .NET。数据平台接口、数据比对与规模审查。">
+  <meta name="description" content="张雯轩，三年 .NET。数据平台后端：流水、税票、话单、轨迹与手机取证。">
   <title>张雯轩</title>
   <link rel="canonical" href="https://1184898069.github.io/homepage/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
       <section class="lede" aria-labelledby="lede-title">
         <p class="folio">壹</p>
         <h2 id="lede-title" class="visually-hidden">开篇</h2>
-        <p class="lede-text">三年 .NET。长期做数据平台接口，也写比对工具和规模审查。小样本看起来正常、体量上来才出事的那种问题，我审得比较细。</p>
+        <p class="lede-text">三年 .NET。主业是一套把流水、税票、话单、轨迹和手机取证收在同一套 API 里的数据平台后端。</p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
@@ -52,13 +52,15 @@
           <li class="entry">
             <p class="entry-num" aria-hidden="true">一</p>
             <div class="entry-body">
-              <h3>数据平台接口与 AI 融合</h3>
-              <p class="entry-meta"><span>C#</span><span>ASP.NET WebAPI</span><span>长期迭代</span></p>
-              <p>这是体量最大的一项：多项目解决方案的数据平台后端，接口、模型、分析与公共层拆开，并在上面叠 AI 模块。</p>
+              <h3>数据平台后端（九合一）</h3>
+              <p class="entry-meta"><span>C#</span><span>ASP.NET Core</span><span>PostgreSQL</span><span>Elasticsearch</span></p>
+              <p>体量最大的一项。把银行流水、税票、话单、出行轨迹、案件库和手机取证收成同一套后端，两千多次提交，十来个项目拆在一个解决方案里。</p>
               <ul class="bullets">
-                <li>主栈 C# / ASP.NET WebAPI，模型与分析分层，带测试项目，提交记录两千以上。</li>
-                <li>在原有数据接口上做 AI 能力接入，而不是另起一个玩具演示。</li>
-                <li>同期还有 SQLite 数据访问封装、前端 WebUI 相关仓库，前后端是一套里的。</li>
+                <li>分层：控制器 / 服务 / DAO / 领域与分析模型 / 公共库；自定义 Token 鉴权、全局授权和异常过滤，路由统一 <code>api/[controller]/[action]</code>，Swagger 跨程序集出文档。</li>
+                <li>业务上覆盖流水碰撞、税票汇总、话单、轨迹分析，以及手机取证：证据树、跨证据检索与导出、聊天词画像、时段分布、敏感词一键筛、时序与直接关系。</li>
+                <li>存储用 PostgreSQL + Elasticsearch，做过批量上传和检索路径的优化；大文件走 Git LFS。</li>
+                <li>在原有鉴权上接人脸登录/核验，并做手机画像解析、第三方取证报告格式映射。关系图谱另有独立的图引擎项目。</li>
+                <li>按现场部署做定制，处理加密狗授权的性能和多线程稳定性。提交规范用 Conventional Commits，带单元/集成测试项目。</li>
               </ul>
             </div>
           </li>
@@ -128,7 +130,7 @@
           <li>Vue 2</li>
         </ul>
         <div class="prose">
-          <p>日常在数据平台的 WebAPI、模型和 SQL 上做事，也会碰 Vue 2 大表页。另有比对工具、带审批的视频流水线，以及开源的规模审查 Skill。</p>
+          <p>主业是数据平台后端：流水、税票、话单、轨迹、案件库和手机取证收在同一套 ASP.NET Core API 里。也会碰 Vue 2 大表页、比对工具，以及带审批的视频流水线。</p>
           <p>真正花时间的是：功能在小样本里是对的，数据量、并发一上来才爆。问题往往不在某一个函数，而在查询、分页、载荷、导出和前端大表怎么接住。</p>
           <p>GitHub 简介仍是 Nobody。</p>
         </div>
