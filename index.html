@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0e0d0c">
-  <meta name="description" content="张雯轩，三年 .NET。数据平台后端：流水、税票、话单、轨迹与手机取证。">
+  <meta name="description" content="张雯轩，三年 .NET。独立完成九合一数据平台后端。">
   <title>张雯轩</title>
   <link rel="canonical" href="https://1184898069.github.io/homepage/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
       <section class="lede" aria-labelledby="lede-title">
         <p class="folio">壹</p>
         <h2 id="lede-title" class="visually-hidden">开篇</h2>
-        <p class="lede-text">三年 .NET。主业是一套把流水、税票、话单、轨迹和手机取证收在同一套 API 里的数据平台后端。</p>
+        <p class="lede-text">三年 .NET。独立做过一套九合一数据平台后端：流水、税票、话单、轨迹、案件、手机画像和关系图谱，从接口、存储、鉴权、授权到报告导出都是我写的。</p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
@@ -52,15 +52,17 @@
           <li class="entry">
             <p class="entry-num" aria-hidden="true">一</p>
             <div class="entry-body">
-              <h3>数据平台后端（九合一）</h3>
-              <p class="entry-meta"><span>C#</span><span>ASP.NET Core</span><span>PostgreSQL</span><span>Elasticsearch</span></p>
-              <p>体量最大的一项。把银行流水、税票、话单、出行轨迹、案件库和手机取证收成同一套后端，两千多次提交，十来个项目拆在一个解决方案里。</p>
+              <h3>九合一数据平台后端</h3>
+              <p class="entry-meta"><span>独立完成</span><span>C# / ASP.NET Core</span><span>两千余次提交</span></p>
+              <p>这是我一个人从架构到业务写完并持续迭代的主项目。九个分析产品收成同一套 API：银行流水、税票发票、通信话单、出行轨迹、案件库、层级/传销画布、综合分析、动态检索，以及完整的手机画像。解决方案里九个工程，六十多个控制器，提交两千多次。</p>
               <ul class="bullets">
-                <li>分层：控制器 / 服务 / DAO / 领域与分析模型 / 公共库；自定义 Token 鉴权、全局授权和异常过滤，路由统一 <code>api/[controller]/[action]</code>，Swagger 跨程序集出文档。</li>
-                <li>业务上覆盖流水碰撞、税票汇总、话单、轨迹分析，以及手机取证：证据树、跨证据检索与导出、聊天词画像、时段分布、敏感词一键筛、时序与直接关系。</li>
-                <li>存储用 PostgreSQL + Elasticsearch，做过批量上传和检索路径的优化；大文件走 Git LFS。</li>
-                <li>在原有鉴权上接人脸登录/核验，并做手机画像解析、第三方取证报告格式映射。关系图谱另有独立的图引擎项目。</li>
-                <li>按现场部署做定制，处理加密狗授权的性能和多线程稳定性。提交规范用 Conventional Commits，带单元/集成测试项目。</li>
+                <li>分层自己定：控制器、服务、DAO、领域模型、分析模型、公共库、测试。自定义 Token 鉴权、全局授权、异常过滤，路由统一，Swagger 跨程序集出文档。权限另有独立的 SQL 版本库。</li>
+                <li>存储四套一起用：PostgreSQL（SqlSugar）、Elasticsearch（含库表融合检索）、Neo4j 图库、SQLite 本地参考库（基站、汇率、IP 归属）。批量上传支持断点续传，长任务有进度接口，大文件走 Git LFS。</li>
+                <li>银行流水、税票、话单都能进、能标、能碰撞；税票有碰撞分析，银行卡有 MAC 碰撞、轨迹和对账单生成。资金分析覆盖流入流出、明细弹出、按币种汇总。</li>
+                <li>手机画像是一整条产品线，不是几个接口：即时通讯、邮件、电商、出行导航、浏览分类、网络共享、本机信息；证据树导航；跨证据全文检索和滚动导出；聊天词画像和停用词；敏感信息一键挖掘；按时段、时序、直接关系展开。单机版能打成 Windows 服务离线跑。</li>
+                <li>关系图谱是自己写的图引擎：点线合并、按方向连边、去重、样式和图上唯一 ID，按文档注释能吃下很大的明细索引。图标调色板、SVG 导入、可视化条件都在同一套里。</li>
+                <li>人脸登录（检测后人脸向量核验）、第三方取证报告格式映射、缓刑等规则模型自动匹配日期。Excel / Word / CSV / 分析报告 / 页眉页脚 PDF 都能出；现场授权走加密狗和机器码。</li>
+                <li>配套也是我写的：ES 索引升级工具、数据比对桌面工具、本地解析库、Vue 前端差异同步小工具。前端是 Vue。有单元和集成测试工程。</li>
               </ul>
             </div>
           </li>
@@ -130,7 +132,7 @@
           <li>Vue 2</li>
         </ul>
         <div class="prose">
-          <p>主业是数据平台后端：流水、税票、话单、轨迹、案件库和手机取证收在同一套 ASP.NET Core API 里。也会碰 Vue 2 大表页、比对工具，以及带审批的视频流水线。</p>
+          <p>九合一数据平台后端是我独立做完的：流水、税票、话单、轨迹、案件、手机画像、关系图谱，鉴权、存储、授权、报告导出和现场单机部署都在里面。Vue 大表页、比对工具和视频流水线是同一套工作里的东西。</p>
           <p>真正花时间的是：功能在小样本里是对的，数据量、并发一上来才爆。问题往往不在某一个函数，而在查询、分页、载荷、导出和前端大表怎么接住。</p>
           <p>GitHub 简介仍是 Nobody。</p>
         </div>
