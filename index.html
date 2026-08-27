@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0e0d0c">
-  <meta name="description" content="张雯轩，三年 .NET。独立完成九合一数据平台后端。">
+  <meta name="description" content="张雯轩，三年 .NET。九合一数据平台：流水、税票、话单、轨迹与手机画像。">
   <title>张雯轩</title>
   <link rel="canonical" href="https://1184898069.github.io/homepage/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
       <section class="lede" aria-labelledby="lede-title">
         <p class="folio">壹</p>
         <h2 id="lede-title" class="visually-hidden">开篇</h2>
-        <p class="lede-text">三年 .NET。独立做过一套九合一数据平台后端：流水、税票、话单、轨迹、案件、手机画像和关系图谱，从接口、存储、鉴权、授权到报告导出都是我写的。</p>
+        <p class="lede-text">三年 .NET。把银行流水、税票、话单、轨迹和手机画像收进同一套分析平台，一次导入就能碰撞、画图、出报告。</p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
@@ -53,16 +53,15 @@
             <p class="entry-num" aria-hidden="true">一</p>
             <div class="entry-body">
               <h3>九合一数据平台后端</h3>
-              <p class="entry-meta"><span>独立完成</span><span>C# / ASP.NET Core</span><span>两千余次提交</span></p>
-              <p>这是我一个人从架构到业务写完并持续迭代的主项目。九个分析产品收成同一套 API：银行流水、税票发票、通信话单、出行轨迹、案件库、层级/传销画布、综合分析、动态检索，以及完整的手机画像。解决方案里九个工程，六十多个控制器，提交两千多次。</p>
+              <p class="entry-meta"><span>C# / ASP.NET Core</span><span>PostgreSQL · ES · Neo4j</span><span>Vue</span></p>
+              <p>将银行流水、税票、通信话单、出行轨迹、案件库、层级分析、综合研判和手机画像做成同一套 API。现场只需登入一次，就能在同一权限和同一检索里把多源数据对上、画出来、导出成报告。</p>
               <ul class="bullets">
-                <li>分层自己定：控制器、服务、DAO、领域模型、分析模型、公共库、测试。自定义 Token 鉴权、全局授权、异常过滤，路由统一，Swagger 跨程序集出文档。权限另有独立的 SQL 版本库。</li>
-                <li>存储四套一起用：PostgreSQL（SqlSugar）、Elasticsearch（含库表融合检索）、Neo4j 图库、SQLite 本地参考库（基站、汇率、IP 归属）。批量上传支持断点续传，长任务有进度接口，大文件走 Git LFS。</li>
-                <li>银行流水、税票、话单都能进、能标、能碰撞；税票有碰撞分析，银行卡有 MAC 碰撞、轨迹和对账单生成。资金分析覆盖流入流出、明细弹出、按币种汇总。</li>
-                <li>手机画像是一整条产品线，不是几个接口：即时通讯、邮件、电商、出行导航、浏览分类、网络共享、本机信息；证据树导航；跨证据全文检索和滚动导出；聊天词画像和停用词；敏感信息一键挖掘；按时段、时序、直接关系展开。单机版能打成 Windows 服务离线跑。</li>
-                <li>关系图谱是自己写的图引擎：点线合并、按方向连边、去重、样式和图上唯一 ID，按文档注释能吃下很大的明细索引。图标调色板、SVG 导入、可视化条件都在同一套里。</li>
-                <li>人脸登录（检测后人脸向量核验）、第三方取证报告格式映射、缓刑等规则模型自动匹配日期。Excel / Word / CSV / 分析报告 / 页眉页脚 PDF 都能出；现场授权走加密狗和机器码。</li>
-                <li>配套也是我写的：ES 索引升级工具、数据比对桌面工具、本地解析库、Vue 前端差异同步小工具。前端是 Vue。有单元和集成测试工程。</li>
+                <li>实现统一鉴权（Token、角色菜单、部门）和全局异常处理；权限变更走独立 SQL 版本库，避免各模块各搞一套登录。</li>
+                <li>接入 PostgreSQL、Elasticsearch、Neo4j 和 SQLite 参考库（基站、汇率、IP 归属），库表与 ES 可融合检索。大包导入支持断点续传和任务进度，失败不必从头传。</li>
+                <li>流水、税票、话单可入库、标注、碰撞；银行卡支持 MAC 碰撞、轨迹和对账单；资金分析给出流入流出、明细下钻和多币种汇总，把「同一主体有没有在别的账单里出现」变成可点的结果。</li>
+                <li>手机画像覆盖即时通讯、邮件、电商、出行、浏览和本机信息：证据树、跨证据全文检索与滚动导出、聊天词画像、敏感信息一键挖掘、时段与时序、直接关系。单机版可打成 Windows 服务离线运行。</li>
+                <li>关系图谱支持按条件建图、点线合并、按方向连边和去重，把账单和话单里的关系铺成可操作的画面，而不是导出一张静态图。</li>
+                <li>人脸核验登录、第三方取证报告格式映射、规则模型按日期自动匹配。分析报告可出 Excel / Word / CSV / PDF（含页眉页脚）。现场用加密狗和机器码授权。</li>
               </ul>
             </div>
           </li>
@@ -71,10 +70,9 @@
             <div class="entry-body">
               <h3>数据比对工具</h3>
               <p class="entry-meta"><span>C#</span><span>SQLite</span></p>
-              <p>桌面侧数据比对，用来核对两份数据是否一致，而不是只在库里跑一条 SQL 看一眼。</p>
+              <p>实现本地数据比对：两份表或库可以按字段对齐、标出差异，结果落在 SQLite 里，不必靠人工扫行。</p>
               <ul class="bullets">
-                <li>独立解决方案，本地库用 SQLite。</li>
-                <li>解决的是核对、对账这类脏活：字段多、记录多时，靠眼睛对不住。</li>
+                <li>字段多、记录多时给出可复查的差异清单，对账不必再导出两份 Excel 肉眼对比。</li>
               </ul>
             </div>
           </li>
@@ -83,10 +81,9 @@
             <div class="entry-body">
               <h3>审批制视频自动化</h3>
               <p class="entry-meta"><span>Python</span><span>FFmpeg</span></p>
-              <p>带人工审批闸门的线下视频处理流水线：可回放、可审计、交付包可校验，不把发布权直接交给脚本。</p>
+              <p>实现带审批闸门的视频处理流水线：FFmpeg 负责转码与剪辑，关键节点留下不可变快照，交付包可校验。</p>
               <ul class="bullets">
-                <li>用 FFmpeg 做内容处理，关键节点留不可变的审查快照。</li>
-                <li>目标是可恢复、可追责的业务自动化，而不是一条无人看着的定时任务。</li>
+                <li>发布必须经过人工确认，流水线可从失败点恢复，过程可审计，避免脚本直接对外发出去。</li>
               </ul>
             </div>
           </li>
@@ -97,11 +94,10 @@
                 <a href="https://github.com/1184898069/large-data-safety-review">Large Data Safety Review</a>
               </h3>
               <p class="entry-meta"><span>Python</span><span>Codex Skill</span><span>公开</span></p>
-              <p>给数据密集功能做上线前审查：小样本看起来正常，真实体量、并发和增长上来之后才爆的问题。</p>
+              <p>实现上线前的数据规模审查：沿查询、分页、载荷、导出和前端渲染整条路径找「小样本正常、体量上来才爆」的问题，输出带证据的结论。</p>
               <ul class="bullets">
-                <li>沿着完整数据路径看查询、分页、API 载荷、批处理、导出、前端状态和渲染。</li>
-                <li>面向 Vue 2 + vxe-table 大表页，以及 ASP.NET WebAPI、EF Core、SQL 与高流量导出。</li>
-                <li>缺材料就标 Unverified，不把「能撑住」当默认结论。</li>
+                <li>覆盖 Vue 2 + vxe-table 大表页，以及 ASP.NET WebAPI、EF Core、SQL 与导出任务。</li>
+                <li>缺材料标为 Unverified。公开合成评测里，审查质量分从 53.33 提到 100（9/9 案例）；2 万文件 / 500 MiB 约 125 秒审完。</li>
               </ul>
             </div>
           </li>
@@ -112,7 +108,7 @@
                 <a href="https://github.com/1184898069/codex-usage-float">Codex Usage Float</a>
               </h3>
               <p class="entry-meta"><span>TypeScript</span><span>Electron</span><span>公开</span></p>
-              <p>本机置顶悬浮窗，只读 Codex 的非敏感配置和状态。不读令牌、密钥或提示，也不上传本地数据。</p>
+              <p>实现本机置顶监视：只读 Codex 非敏感配置与 MCP 端口状态，用量跳转官方页面。不读令牌、密钥或提示，本地数据不上云。</p>
             </div>
           </li>
         </ol>
@@ -132,8 +128,8 @@
           <li>Vue 2</li>
         </ul>
         <div class="prose">
-          <p>九合一数据平台后端是我独立做完的：流水、税票、话单、轨迹、案件、手机画像、关系图谱，鉴权、存储、授权、报告导出和现场单机部署都在里面。Vue 大表页、比对工具和视频流水线是同一套工作里的东西。</p>
-          <p>真正花时间的是：功能在小样本里是对的，数据量、并发一上来才爆。问题往往不在某一个函数，而在查询、分页、载荷、导出和前端大表怎么接住。</p>
+          <p>三年 .NET。主业把多源账单和手机取证收进同一套分析平台：一次导入，可以碰撞、画关系图、出报告，现场也能单机离线跑。</p>
+          <p>关心的是数据路径在真实体量下还是否有界——查询、分页、载荷、导出和前端大表，而不是单个函数看起来对不对。</p>
           <p>GitHub 简介仍是 Nobody。</p>
         </div>
       </section>
