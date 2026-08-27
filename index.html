@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0e0d0c">
-  <meta name="description" content="张雯轩，三年 .NET。审数据规模，写给自己用的本地工具。">
+  <meta name="description" content="张雯轩，三年 .NET。数据平台接口、数据比对与规模审查。">
   <title>张雯轩</title>
   <link rel="canonical" href="https://1184898069.github.io/homepage/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
       <section class="lede" aria-labelledby="lede-title">
         <p class="folio">壹</p>
         <h2 id="lede-title" class="visually-hidden">开篇</h2>
-        <p class="lede-text">三年 .NET。小样本看起来正常，体量上来才出事的那种问题，我审得比较细。</p>
+        <p class="lede-text">三年 .NET。长期做数据平台接口，也写比对工具和规模审查。小样本看起来正常、体量上来才出事的那种问题，我审得比较细。</p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
@@ -52,32 +52,63 @@
           <li class="entry">
             <p class="entry-num" aria-hidden="true">一</p>
             <div class="entry-body">
-              <h3>
-                <a href="https://github.com/1184898069/large-data-safety-review">Large Data Safety Review</a>
-              </h3>
-              <p class="entry-meta"><span>Python</span><span>Codex Skill</span><span>2026</span></p>
-              <p>给数据密集功能做上线前审查：小样本看起来正常，真实体量、并发和增长上来之后才爆的问题。</p>
+              <h3>数据平台接口与 AI 融合</h3>
+              <p class="entry-meta"><span>C#</span><span>ASP.NET WebAPI</span><span>长期迭代</span></p>
+              <p>这是体量最大的一项：多项目解决方案的数据平台后端，接口、模型、分析与公共层拆开，并在上面叠 AI 模块。</p>
               <ul class="bullets">
-                <li>沿着完整数据路径看查询、分页、API 载荷、批处理、导出、前端状态和渲染，而不是只审一个函数。</li>
-                <li>面向 Vue 2 + axios + vxe-table 大表页，以及 ASP.NET WebAPI、EF Core、SQL 与高流量导出。</li>
-                <li>把「会不会撑得住」收成有证据的发现：触发规模、影响、最小修复和验证方法。材料不足就标 Unverified，不猜它安全。</li>
-                <li>公开评测（2026-08-13，合成用例，不是业务容量承诺）：9/9 案例质量分 53.33 → 100；2 万源文件 / 500 MiB 审查约 125 秒。</li>
+                <li>主栈 C# / ASP.NET WebAPI，模型与分析分层，带测试项目，提交记录两千以上。</li>
+                <li>在原有数据接口上做 AI 能力接入，而不是另起一个玩具演示。</li>
+                <li>同期还有 SQLite 数据访问封装、前端 WebUI 相关仓库，前后端是一套里的。</li>
               </ul>
             </div>
           </li>
           <li class="entry">
             <p class="entry-num" aria-hidden="true">二</p>
             <div class="entry-body">
+              <h3>数据比对工具</h3>
+              <p class="entry-meta"><span>C#</span><span>SQLite</span></p>
+              <p>桌面侧数据比对，用来核对两份数据是否一致，而不是只在库里跑一条 SQL 看一眼。</p>
+              <ul class="bullets">
+                <li>独立解决方案，本地库用 SQLite。</li>
+                <li>解决的是核对、对账这类脏活：字段多、记录多时，靠眼睛对不住。</li>
+              </ul>
+            </div>
+          </li>
+          <li class="entry">
+            <p class="entry-num" aria-hidden="true">三</p>
+            <div class="entry-body">
+              <h3>审批制视频自动化</h3>
+              <p class="entry-meta"><span>Python</span><span>FFmpeg</span></p>
+              <p>带人工审批闸门的线下视频处理流水线：可回放、可审计、交付包可校验，不把发布权直接交给脚本。</p>
+              <ul class="bullets">
+                <li>用 FFmpeg 做内容处理，关键节点留不可变的审查快照。</li>
+                <li>目标是可恢复、可追责的业务自动化，而不是一条无人看着的定时任务。</li>
+              </ul>
+            </div>
+          </li>
+          <li class="entry">
+            <p class="entry-num" aria-hidden="true">四</p>
+            <div class="entry-body">
+              <h3>
+                <a href="https://github.com/1184898069/large-data-safety-review">Large Data Safety Review</a>
+              </h3>
+              <p class="entry-meta"><span>Python</span><span>Codex Skill</span><span>公开</span></p>
+              <p>给数据密集功能做上线前审查：小样本看起来正常，真实体量、并发和增长上来之后才爆的问题。</p>
+              <ul class="bullets">
+                <li>沿着完整数据路径看查询、分页、API 载荷、批处理、导出、前端状态和渲染。</li>
+                <li>面向 Vue 2 + vxe-table 大表页，以及 ASP.NET WebAPI、EF Core、SQL 与高流量导出。</li>
+                <li>缺材料就标 Unverified，不把「能撑住」当默认结论。</li>
+              </ul>
+            </div>
+          </li>
+          <li class="entry">
+            <p class="entry-num" aria-hidden="true">五</p>
+            <div class="entry-body">
               <h3>
                 <a href="https://github.com/1184898069/codex-usage-float">Codex Usage Float</a>
               </h3>
-              <p class="entry-meta"><span>TypeScript</span><span>Electron</span><span>2026</span></p>
-              <p>本机置顶悬浮窗，查看 Codex Desktop / CLI 的非敏感配置和状态，给自己盯用量和 MCP 是否活着。</p>
-              <ul class="bullets">
-                <li>只读 <code>~/.codex/config.toml</code> 里的模型、档位、推理强度和功能开关；列出已配置的 MCP，并探活 HTTP 端口。</li>
-                <li>安全边界写死：不读 auth.json、密钥、提示原文、SQLite 行内容，也不上传任何本地数据。</li>
-                <li>订阅余量没有稳定的本地公开 API，所以只做估算，并跳转到官方用量页，不去刮私人账号。</li>
-              </ul>
+              <p class="entry-meta"><span>TypeScript</span><span>Electron</span><span>公开</span></p>
+              <p>本机置顶悬浮窗，只读 Codex 的非敏感配置和状态。不读令牌、密钥或提示，也不上传本地数据。</p>
             </div>
           </li>
         </ol>
@@ -97,9 +128,9 @@
           <li>Vue 2</li>
         </ul>
         <div class="prose">
-          <p>日常在 ASP.NET WebAPI、EF Core、SQL 上写接口和查数据，页面侧也碰 Vue 2 + vxe-table 这种大结果集。</p>
+          <p>日常在数据平台的 WebAPI、模型和 SQL 上做事，也会碰 Vue 2 大表页。另有比对工具、带审批的视频流水线，以及开源的规模审查 Skill。</p>
           <p>真正花时间的是：功能在小样本里是对的，数据量、并发一上来才爆。问题往往不在某一个函数，而在查询、分页、载荷、导出和前端大表怎么接住。</p>
-          <p>公开项目一个沿完整数据路径做审查，缺材料就标 Unverified；一个是给自己用的 Codex 本机悬浮窗，只读非敏感配置。GitHub 简介仍是 Nobody。</p>
+          <p>GitHub 简介仍是 Nobody。</p>
         </div>
       </section>
 
