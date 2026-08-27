@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0e0d0c">
-  <meta name="description" content="张雯轩的个人页。Nobody.">
+  <meta name="description" content="张雯轩的个人简介。数据规模审查与本地开发工具。">
   <title>张雯轩</title>
   <link rel="canonical" href="https://1184898069.github.io/homepage/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,7 +30,7 @@
 
     <main id="main">
       <nav class="toc" aria-label="栏目">
-        <a href="#work">选作</a>
+        <a href="#work">经历</a>
         <a href="#about">关于</a>
         <a href="#contact">往来</a>
       </nav>
@@ -38,13 +38,13 @@
       <section class="lede" aria-labelledby="lede-title">
         <p class="folio">壹</p>
         <h2 id="lede-title" class="visually-hidden">开篇</h2>
-        <p class="lede-text">GitHub 简介只有这两个字。不多写。</p>
+        <p class="lede-text">做数据规模上的审查，也写给自己用的本地工具。简介两个字，项目在下面。</p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
         <header class="section-head">
           <p class="folio">贰</p>
-          <h2 id="work-title">选作</h2>
+          <h2 id="work-title">经历</h2>
           <p class="section-en">Selected work</p>
         </header>
 
@@ -53,20 +53,31 @@
             <p class="entry-num" aria-hidden="true">一</p>
             <div class="entry-body">
               <h3>
-                <a href="https://github.com/1184898069/large-data-safety-review">large-data-safety-review</a>
+                <a href="https://github.com/1184898069/large-data-safety-review">Large Data Safety Review</a>
               </h3>
-              <p class="entry-meta"><span>Python</span><span>Codex Skill</span></p>
-              <p>在数据密集功能进入生产规模之前，用证据找出可能演变成故障的风险。沿完整数据路径审查查询、分页、载荷、任务与渲染；缺少材料的层级标为 Unverified。</p>
+              <p class="entry-meta"><span>Python</span><span>Codex Skill</span><span>2026</span></p>
+              <p>给数据密集功能做上线前审查：小样本看起来正常，真实体量、并发和增长上来之后才爆的问题。</p>
+              <ul class="bullets">
+                <li>沿着完整数据路径看查询、分页、API 载荷、批处理、导出、前端状态和渲染，而不是只审一个函数。</li>
+                <li>面向 Vue 2 + axios + vxe-table 大表页，以及 ASP.NET WebAPI、EF Core、SQL 与高流量导出。</li>
+                <li>把「会不会撑得住」收成有证据的发现：触发规模、影响、最小修复和验证方法。材料不足就标 Unverified，不猜它安全。</li>
+                <li>公开评测（2026-08-13，合成用例，不是业务容量承诺）：9/9 案例质量分 53.33 → 100；2 万源文件 / 500 MiB 审查约 125 秒。</li>
+              </ul>
             </div>
           </li>
           <li class="entry">
             <p class="entry-num" aria-hidden="true">二</p>
             <div class="entry-body">
               <h3>
-                <a href="https://github.com/1184898069/codex-usage-float">codex-usage-float</a>
+                <a href="https://github.com/1184898069/codex-usage-float">Codex Usage Float</a>
               </h3>
-              <p class="entry-meta"><span>TypeScript</span><span>本机工具</span></p>
-              <p>本机悬浮监视器，用于查看 Codex Desktop / CLI 的非敏感配置与状态。不读取令牌、密钥或提示内容，也不上传本地数据。</p>
+              <p class="entry-meta"><span>TypeScript</span><span>Electron</span><span>2026</span></p>
+              <p>本机置顶悬浮窗，查看 Codex Desktop / CLI 的非敏感配置和状态，给自己盯用量和 MCP 是否活着。</p>
+              <ul class="bullets">
+                <li>只读 <code>~/.codex/config.toml</code> 里的模型、档位、推理强度和功能开关；列出已配置的 MCP，并探活 HTTP 端口。</li>
+                <li>安全边界写死：不读 auth.json、密钥、提示原文、SQLite 行内容，也不上传任何本地数据。</li>
+                <li>订阅余量没有稳定的本地公开 API，所以只做估算，并跳转到官方用量页，不去刮私人账号。</li>
+              </ul>
             </div>
           </li>
         </ol>
@@ -78,9 +89,8 @@
           <h2 id="about-title">关于</h2>
         </header>
         <div class="prose">
-          <p>没有公开的职位、雇主或学历可陈列。公开资料止于 GitHub 简介：Nobody。</p>
-          <p>常用工具：Figma、Canva、GitHub、Microsoft 365、Google Workspace。</p>
-          <p class="placeholder">【待补：所在地，或其他想写的一句。】</p>
+          <p>公开身份很少。GitHub 简介就是 Nobody。能拿出来看的是上面两个项目：一个审大规模数据路径，一个把 Codex 的安全可读状态贴在桌面上。</p>
+          <p>日常工具：Figma、Canva、GitHub、Microsoft 365、Google Workspace。</p>
         </div>
       </section>
 
@@ -89,16 +99,20 @@
           <p class="folio">肆</p>
           <h2 id="contact-title">往来</h2>
         </header>
-        <div class="prose">
-          <p>目前只通过 GitHub 联系。</p>
-          <p>
-            <a class="contact-link" href="https://github.com/1184898069">github.com/1184898069</a>
-          </p>
-        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">微信</span>
+            <span class="contact-value">Z105850149</span>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a class="contact-value" href="https://github.com/1184898069">1184898069</a>
+          </li>
+        </ul>
       </section>
 
       <footer class="colophon">
-        <p>张雯轩　·　1184898069</p>
+        <p>张雯轩</p>
       </footer>
     </main>
   </div>
