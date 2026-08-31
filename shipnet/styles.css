@@ -1,0 +1,89 @@
+
+:root {
+  --bg: #061018;
+  --ink: #eef7f2;
+  --muted: #93a8a0;
+  --line: rgba(120, 230, 196, 0.14);
+  --accent: #3ee0b2;
+  --accent-dim: #1a8f72;
+  --card: rgba(10, 24, 32, 0.72);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(6,16,24,0.2), #061018 40%),
+    radial-gradient(900px 420px at 80% -10%, rgba(62,224,178,0.16), transparent 50%),
+    radial-gradient(700px 380px at 0% 10%, rgba(48,90,255,0.16), transparent 55%),
+    #061018;
+  min-height: 100vh;
+}
+.wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+header.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; gap: 16px;
+}
+.logo { font-family: var(--serif); font-weight: 700; font-size: 26px; color: var(--ink); text-decoration: none; }
+.logo em { color: var(--accent); font-style: normal; }
+.nav-links { display: flex; gap: 18px; align-items: center; color: var(--muted); font-size: 14px; }
+.nav-links a { color: inherit; text-decoration: none; }
+.lang {
+  border: 1px solid var(--line); background: transparent; color: var(--ink);
+  border-radius: 999px; padding: 6px 10px; cursor: pointer; font: inherit;
+}
+.hero { padding: 48px 0 24px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start; }
+h1 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 18px;
+}
+.lede { font-size: 18px; color: var(--muted); line-height: 1.6; margin: 0 0 28px; max-width: 58ch; }
+.price-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+.price { font-family: var(--serif); font-size: 52px; margin: 0; }
+.price small { font-size: 16px; color: var(--muted); font-family: var(--sans); }
+.buy, .ghost {
+  display: inline-flex; justify-content: center; width: 100%;
+  border: 0; border-radius: 999px; padding: 13px 18px; font: inherit; font-weight: 600;
+  cursor: pointer; text-decoration: none; text-align: center;
+}
+.buy { background: var(--accent); color: #04241b; margin: 18px 0 10px; }
+.buy[disabled] { opacity: 0.55; cursor: not-allowed; }
+.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.fine { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 20px 0 56px; }
+.feat {
+  border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: rgba(255,255,255,0.02);
+}
+.feat h3 { margin: 0 0 8px; font-size: 16px; }
+.feat p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.section { padding: 10px 0 64px; }
+.section h2 { font-family: var(--serif); font-size: 32px; margin: 0 0 16px; }
+ol.steps { color: var(--muted); line-height: 1.7; padding-left: 20px; }
+.faq { display: grid; gap: 12px; }
+.faq details {
+  border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; background: rgba(255,255,255,0.02);
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq p { color: var(--muted); margin: 8px 0 0; line-height: 1.6; }
+footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.modal-bg {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; place-items: center; padding: 20px;
+}
+.modal-bg.show { display: grid; }
+.modal {
+  width: min(520px, 100%); background: #0c1b24; border: 1px solid var(--line);
+  border-radius: 20px; padding: 24px;
+}
+.modal h3 { margin-top: 0; font-family: var(--serif); }
+@media (max-width: 860px) {
+  .hero, .features { grid-template-columns: 1fr; }
+  header.nav { flex-wrap: wrap; }
+}
+[data-lang="en"] [lang="zh"],
+[data-lang="zh"] [lang="en"] { display: none; }
