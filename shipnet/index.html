@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shipnet — ASP.NET 9 + Creem starter</title>
+    <meta name="description" content="Sell an ASP.NET 9 product with Creem billing when Stripe will not onboard you. Vue 3 admin, PostgreSQL, webhooks, $49 one-time." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <a class="logo" href="./">Ship<em>net</em></a>
+        <div class="nav-links">
+          <a href="#whats-inside"><span lang="en">What's inside</span><span lang="zh">包含什么</span></a>
+          <a href="#creem"><span lang="en">Creem wiring</span><span lang="zh">接入 Creem</span></a>
+          <a href="#faq">FAQ</a>
+          <button class="lang" type="button" data-lang-switch>中文</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1 lang="en">Ship a paid ASP.NET product when Stripe will not onboard you.</h1>
+          <h1 lang="zh">Stripe 开不了户时，用 Creem 把 ASP.NET 产品卖出去。</h1>
+          <p class="lede" lang="en">
+            Shipnet is a commercial starter: ASP.NET 9 Web API, Vue 3 admin, PostgreSQL, JWT auth,
+            and Creem checkout plus signed webhooks already wired. Built for indie hackers — including
+            sellers based in China — who need a Merchant of Record instead of fighting Stripe.
+          </p>
+          <p class="lede" lang="zh">
+            Shipnet 是可直接售卖的起步套件：ASP.NET 9 Web API、Vue 3 后台、PostgreSQL、JWT 登录，
+            以及已经接好的 Creem 结账与签名 Webhook。面向独立开发者，尤其是国内卖家，
+            用 Merchant of Record 收款，而不是在 Stripe 审核里空转。
+          </p>
+        </div>
+        <aside class="price-card">
+          <p class="fine" lang="en">ONE-TIME LICENSE</p>
+          <p class="fine" lang="zh">一次买断</p>
+          <p class="price"><span data-price>$49</span> <small lang="en">USD · lifetime of this repo</small><small lang="zh">美元 · 本仓库买断</small></p>
+          <ul class="fine" style="padding-left:18px;line-height:1.7">
+            <li lang="en">Original MIT-licensed source you can rebrand</li>
+            <li lang="zh">MIT 源码，可改名改装成你自己的产品</li>
+            <li lang="en">Creem test + live mode via one env flag</li>
+            <li lang="zh">一个环境变量切换 Creem 测试 / 正式环境</li>
+            <li lang="en">Docker Compose + GitHub Actions CI</li>
+            <li lang="zh">Docker Compose 与 GitHub Actions CI</li>
+          </ul>
+          <button class="buy" id="buy" type="button">
+            <span lang="en">Buy Shipnet — </span><span lang="zh">购买 Shipnet — </span><span data-price>$49</span>
+          </button>
+          <a class="ghost" href="../README.md"><span lang="en">Read the 10-minute quickstart</span><span lang="zh">阅读 10 分钟上手</span></a>
+          <p class="fine" lang="en">Checkout is hosted by Creem. Test card in sandbox: 4111 1111 1111 1111.</p>
+          <p class="fine" lang="zh">结账由 Creem 托管。沙箱测试卡：4111 1111 1111 1111。</p>
+        </aside>
+      </section>
+
+      <section class="features" id="whats-inside">
+        <article class="feat">
+          <h3 lang="en">API that looks like a product</h3>
+          <h3 lang="zh">像成品一样的 API</h3>
+          <p lang="en">JWT register/login, health checks, OpenAPI, JSON logs, a sample paid route gated by an active license.</p>
+          <p lang="zh">JWT 注册登录、健康检查、OpenAPI、结构化日志，以及用有效 License 拦住的示例付费接口。</p>
+        </article>
+        <article class="feat">
+          <h3 lang="en">Creem, not a fake Stripe clone</h3>
+          <h3 lang="zh">接的是 Creem，不是假 Stripe</h3>
+          <p lang="en">POST /v1/checkouts with x-api-key. Webhooks verified with HMAC-SHA256 on the raw body. checkout.completed, subscription.paid, subscription.canceled.</p>
+          <p lang="zh">使用 x-api-key 调用 POST /v1/checkouts。Webhook 用原始 body 做 HMAC-SHA256 校验，处理完成、续费与取消。</p>
+        </article>
+        <article class="feat">
+          <h3 lang="en">Admin you can demo today</h3>
+          <h3 lang="zh">今天就能演示的后台</h3>
+          <p lang="en">Vue 3 + Vite: log in, see license status, click Buy, redirect to Creem, unlock the gated page.</p>
+          <p lang="zh">Vue 3 + Vite：登录、看授权状态、点购买跳转 Creem，回来后打开付费页面。</p>
+        </article>
+      </section>
+
+      <section class="section" id="creem">
+        <h2 lang="en">Connect Creem in an afternoon</h2>
+        <h2 lang="zh">一个下午接好 Creem</h2>
+        <ol class="steps">
+          <li lang="en">Create a Creem account and toggle Test Mode. Copy the test API key from Developers.</li>
+          <li lang="zh">注册 Creem，打开 Test Mode，在 Developers 复制测试 API key。</li>
+          <li lang="en">Create a product (one-time for this $49 storefront, or recurring for your SaaS). Copy the prod_… id.</li>
+          <li lang="zh">创建一个产品（本落地页买断用 one-time，你自己的订阅产品用 recurring），复制 prod_… 编号。</li>
+          <li lang="en">Set webhook URL to https://your-api/api/webhooks/creem and copy the signing secret.</li>
+          <li lang="zh">Webhook 填 https://你的域名/api/webhooks/creem，复制签名密钥。</li>
+          <li lang="en">Put keys in .env. For this landing page, paste the Share payment link into site/config.js.</li>
+          <li lang="zh">把密钥写入 .env。卖这个落地页时，把 Share 支付链接贴进 site/config.js。</li>
+        </ol>
+      </section>
+
+      <section class="section" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details open>
+            <summary lang="en">Why Creem instead of Stripe?</summary>
+            <summary lang="zh">为什么不用 Stripe？</summary>
+            <p lang="en">Stripe often declines accounts for China-based and some cross-border sellers. Creem acts as Merchant of Record: tax, checkout, and payouts, with a REST API close enough that a small starter can ship.</p>
+            <p lang="zh">Stripe 经常拒掉国内及部分跨境卖家。Creem 作为 Merchant of Record 处理税务、结账和结算，REST API 足够让一套起步模板直接上线。</p>
+          </details>
+          <details>
+            <summary lang="en">Is $49 a subscription?</summary>
+            <summary lang="zh">49 美元是订阅吗？</summary>
+            <p lang="en">No. Shipnet itself is sold as a one-time download of this codebase. Your own product can be one-time or recurring — that is configured on the Creem product, not hardcoded here.</p>
+            <p lang="zh">不是。Shipnet 本身是买断源码。你自己的产品做一次性还是订阅，在 Creem 产品里配置，不写死在代码里。</p>
+          </details>
+          <details>
+            <summary lang="en">Do I need to keep your branding?</summary>
+            <summary lang="zh">必须保留你们的品牌吗？</summary>
+            <p lang="en">No. Replace copy, colors, and the sample “lanes” feature. Keep the MIT license file. You own the running service you deploy.</p>
+            <p lang="zh">不用。文案、配色和示例「航线」功能都可以换。保留 MIT 许可证文件。你部署出去的服务归你。</p>
+          </details>
+        </div>
+      </section>
+
+      <footer>
+        <span>Shipnet · MIT</span>
+        <span lang="en">Payments by Creem when you connect an account.</span>
+        <span lang="zh">接入 Creem 账户后即可收款。</span>
+      </footer>
+    </div>
+
+    <div class="modal-bg" id="connect-modal">
+      <div class="modal">
+        <h3 lang="en">Connect Creem to enable Buy</h3>
+        <h3 lang="zh">先接入 Creem 才能购买</h3>
+        <p lang="en">This storefront is a placeholder until a Creem payment link exists. In the Creem dashboard, create a <strong>$49 one-time</strong> product, click Share, and paste the URL into <code>site/config.js</code> as <code>creemPaymentLink</code>. Logged-in checkout through the Vue admin uses <code>POST /v1/checkouts</code> instead.</p>
+        <p lang="zh">在贴上 Creem 支付链接之前，购买按钮只展示说明。到 Creem 控制台创建一个 <strong>49 美元一次性</strong>产品，点 Share，把 URL 贴到 <code>site/config.js</code> 的 <code>creemPaymentLink</code>。已登录用户走 Vue 后台时，会调用 <code>POST /v1/checkouts</code>。</p>
+        <button class="buy" id="close-modal" type="button" style="width:auto;padding-inline:22px">OK</button>
+      </div>
+    </div>
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
